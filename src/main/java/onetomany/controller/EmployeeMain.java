@@ -13,26 +13,15 @@ public class EmployeeMain {
 		company.setCompanyName("SJ Company");
 		company.setCompanyAddress("Mugaon");
 		
-		Employee emp1 = new Employee();
-		emp1.setName("Shubham Jadhav");
-		emp1.setPhone(8830086429L);
-		emp1.setCompany(company);
+		Employee emp1 = new Employee("Shubham Jadhav", 8830086429L, company);
+		Employee emp2 = new Employee("Krishna Kadam", 9021453678L, company);
+		Employee emp3 = new Employee("Vaibhav Nagare", 7083415269L, company);
 		
-		Employee emp2 = new Employee();
-		emp2.setName("Krishna Kadam");
-		emp2.setPhone(9021453678L);
-		emp2.setCompany(company);
-		
-		Employee emp3 = new Employee();
-		emp3.setName("Vaibhav Nagare");
-		emp3.setPhone(7083415269L);
-		emp3.setCompany(company);
-		
-		List<Employee> list = new ArrayList<Employee>();
-		
-		list.add(emp1); list.add(emp2); list.add(emp3);
-		
-		company.setEmployees(list);
+		List<Employee> employeeList = new ArrayList<>();
+		employeeList.add(emp1);
+		employeeList.add(emp2);
+		employeeList.add(emp3);
+		company.setEmployees(employeeList);
 		
 		EmployeeDao dao = new EmployeeDao();
 		dao.saveEmployee(emp1);
